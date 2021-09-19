@@ -13,8 +13,9 @@ services:
     volumes:
       - ./docker/mysql:/var/lib/mysql
     networks:
-      - docker
+      - default
 
 networks:
-  docker:
-    driver: bridge
+    default:
+        external:
+            name: docker_default
